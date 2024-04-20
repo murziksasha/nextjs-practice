@@ -1,0 +1,1 @@
+export type Nullabe<T> = null | T;
