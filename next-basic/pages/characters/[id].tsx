@@ -3,7 +3,6 @@
 
 import { useCharacter } from '@/assets/hooks/useCharacter';
 import CharacterCard from '@/components/CharacterCard/CharacterCard';
-import CharactersList from '@/components/CharactersList'
 import HeadMeta from '@/components/HeadMeta/HeadMeta';
 import { getLayout } from '@/components/Layout/Layout';
 import React from 'react'
