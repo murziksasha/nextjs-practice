@@ -1,12 +1,11 @@
 
-
-import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-const inter = Inter({ subsets: ["latin"] });
-import Head from 'next/head'
+import styles from './CharactersList.module.scss';
 import { useCharacters } from "@/assets/hooks/useCharacters";
 import CharacterCard from "../CharacterCard/CharacterCard";
 import HeadMeta from "../HeadMeta/HeadMeta";
+import Link from 'next/link';
+import { getLayout } from '../Layout/Layout';
+
 
 
 
@@ -16,13 +15,15 @@ function CharactersList() {
   return (
     <>
       <HeadMeta title={'Characters List'}/>
-      <main className={`${styles.main} ${inter.className}`}>
-        {characters && characters.map((char) => (
-          <CharacterCard key={char.id} char={char}/>
+        <div className={styles.wrapper}>{characters && characters.map((char) => (
+          <Link key={char.id} href={`/characters/${char.id}`}>
+            <CharacterCard char={char}/>
+          </Link>
         ))}
-      </main>
+        </div>
     </>
   )
 }
 
-export default CharactersList
+CharactersList.getLayout = getLayout
+export default CharactersList;

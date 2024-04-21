@@ -12,8 +12,10 @@ export const useCharacters = (): Nullabe<CharacterType[]> => {
   const [characters, setCharacters] = useState<Nullabe<CharacterType[]>>(null);
 
   useEffect(() => {
-    axios.get(`https://rickandmortyapi.com/api/character`)
+    axios.get(`${process.env.NEXT_PUBLIC_RICK_AND_MORTY_API_URL}/character`)
+    // axios.get(`https://rickandmortyapi.com/api/character`)
     .then(res => setCharacters(res.data.results))
+    .catch(error => console.error("Error fetching characters:", error));
   }, [])
 
   return characters;

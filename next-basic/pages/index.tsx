@@ -2,10 +2,12 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import HeadMeta from "@/components/HeadMeta/HeadMeta";
+import Navbar from "@/components/Navbar/Navbar";
+import { getLayout } from "@/components/Layout/Layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+function Home() {
   return (
     <>
       <HeadMeta title={'My Characters APP'}/>
@@ -107,3 +109,6 @@ export default function Home() {
     </>
   );
 }
+
+Home.getLayout = getLayout;
+export default Home;

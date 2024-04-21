@@ -1,6 +1,7 @@
 
 
 import CharactersList from '@/components/CharactersList'
+import { getLayout } from '@/components/Layout/Layout';
 import React from 'react'
 
 function Characters() {
@@ -11,4 +12,5 @@ function Characters() {
   )
 }
 
+Characters.getLayout = getLayout;
 export default Characters
